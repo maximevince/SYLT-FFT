@@ -1,6 +1,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <math.h>
 
@@ -44,7 +45,7 @@ int32_t find_max_value_location(fft_complex_t *in, int size)
 
     for (int i = 0; i < size; i++)
     {
-        int32_t val = (int32_t)sqrt((double)(((int64_t)in[i].r) * ((int64_t)in[i].r)));
+        int32_t val = (int32_t)abs(in[i].r);
         //printf("%d,%d\n", (int)i, val);
         if (val > max) {
             max = val;
